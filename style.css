@@ -1,0 +1,34 @@
+body {
+    font-size: 16pt;
+}
+
+header {
+    background-color: #CCA43B;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+main {
+    background-color: #E5E5E5;
+    min-height: 60vh;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+footer {
+    background-color: #242F40;
+    color: #E5E5E5;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ol li, ol li::marker {
+    margin-left: 3rem;
+    color: #242F40;
+    list-style: square;
+}
+
+a {
+    color: #CCA43B;
+}
