@@ -32,3 +32,14 @@ ol li, ol li::marker {
 a {
     color: #CCA43B;
 }
+
+header a {
+    color: #242f40;
+    padding-left: 5rem;
+}
+
+.questions {
+    background-color: yellow;
+    margin:0;
+    color: red;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Writer</title>
+
+    <script>
+        function loadStory(){
+            var storyName = document.getElementById("name_input").value 
+            var storyHTML = localStorage.getItem(storyName)
+            document.getElementById("story_editor").value = storyHTML
+        }
+        function saveStory(){
+            var storyName = document.getElementById("name_input").value 
+            var storyHTML = document.getElementById("story_editor").value 
+            localStorage.setItem(storyName,storyHTML)
+        }
+        function displayStory(){
+            var storyHTML = document.getElementById("story_editor").value
+            document.getElementById("story_display").innerHTML = storyHTML
+        }
+    </script>
+
+    <style>
+        textarea{
+            width: 800px;
+            height: 250px;
+            background-color: lightgoldenrodyellow;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        input {
+            max-width: 500px;
+        }
+        section{
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h4><a href="index.html">Back to Week 1 Notes</a></h4>
+    <h4><a href="../index.html">Back to Home</a></h4>
+    <h1>Story Editor</h1>
+    Story Name: <input id=name_input></input>
+    <section>
+        <button onclick="loadStory()">Find and Edit It</button>
+        <button onclick="saveStory()">Save It</button>
+        <button onclick="displayStory()">Display It</button>
+    </section>
+    <textarea id="story_editor" placeholder="Write a totally awesome story here. "></textarea>
+
+    <section id="story_display"></section>
+</body>
+</html>
+
+<!-- name input example:
+history_of_stuff
+ -->
+
+<!-- Text area example:
+<h1>The History of Stuff: Episode 1 ..... or maybe 4. Uhm... I'm not sure any more</h1>
+<p>
+Hi, this is my story, Reader you should probably start playing some inspiring background music here. I'll let you pick what, just make sure it is AMAZING. No... seriously reader, get your music going... Got it going? Great! </p>
+<p> Others are going to try to hijak my story (you know who you are Dad) but this one is mine. So let's get started.</p>
+<p> I was born long, long ago in a galaxy far, far away...</p>
+ -->
+
