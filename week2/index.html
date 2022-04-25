@@ -1,2 +1,108 @@
-Coming soon...
-<h4><a href="../index.html">Back to Home</a></h4>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio Week 2 Notes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h4><a href="../index.html">Back to Home</a></h4>
+    </header>
+
+    <main>
+        <h2>Week 2 Notes</h2>
+        <h3>Novice to Ninja Chapter 2 - Programming Basics</h3>
+        <p>Make a single line comment with "//" and make a multi line comment strarting with "/*" and ending with
+            "*/"</strong></p>
+        <ul>Data Types:
+            <li>String</li>
+            <li>Symbol</li>
+            <li>Number</li>
+            <li>Boolean</li>
+            <li>Undefined</li>
+            <li>Null</li>
+        </ul>
+        <ul>Variables:
+            <li>const - is used if variable will not be reassigned later.</li>
+            <li>let - is used if variable may be reassigned later.</li>
+            <li>var - can be used but is replaced by let. Works similarly to let but let and const have block scope.
+            </li>
+        </ul>
+        <p>To get the value of a variable, simply enter it in the console and press enter. You can also use "typeof" to
+            return the data type.</p>
+        <p>Scobe refers to where a constant or variable is accessible by the program.</p>
+        <p><strong>Template Literals</strong> use the backtick character ` to deliminate the string. This allows both
+            quote types to be used as well as allows interpolation of JavaScript code. </p>
+        <p>For example:<br> 'Hello!'; <br> or <br> const name = `Siri`;<br>`Hello ${ name }!`;<br> Result: `Hello Siri!`
+        </p>
+        <p>Remember Equality is using "=", soft equality is using "==" and hard equality is uinsg "===". Remember to use
+            .isNaN rather than hard equality with the NaN value.</p>
+        <a href="/week2/Ch02quiz/index.html">Quiz Ninja Example Chapter 2</a>
+        <h3>Novice to Ninja Chapter 3 - Arrays, Logic, & Loops</h3>
+        <h4>Arrays - an array is an ordered list of values. Arrays are shown in square brackets []</h4>
+        <p>You can add values to Arrays one by one by setting an Array postion equal to a value. More often Array
+            Literals are used as you can define multiple values.</p>
+        <ul>Arrays have many Properties and Methods:
+            <li>.length - returns the length of an array</li>
+            <li>.pop() - removes the last item from an array</li>
+            <li>.shift() - removes the first item from an array</li>
+            <li>.push() - appends a new value to the end of an array</li>
+            <li>.unshift() - appends a new item to the beginning of an array</li>
+            <li>.concat() - can be used to merge an array with one or more arrays</li>
+            <li>.join() - can be used to turn the array into a string of the items seperated by a comma</li>
+            <li>.slice() - creates a subarray</li>
+            <li>.splice() - removes an item from an array then inserts new items in their place</li>
+            <li>.reverse() - reverses the order of an array</li>
+            <li>.sort() - sorts an array alphabetically - use a callback for numbers</li>
+            <li>.indexOf() - returns the first occurence of the value of an array. Will return -1 if the value is not in
+                the array. Alterntively use .includes()</li>
+        </ul>
+        <p>Sets are a data structure that represents a collection of unique values. They have differing methods than
+            arrays such as .add(), .delete(), .has() and .clear()</p>
+        <p>Maps are another data structure that are a convenient way of keeping a list of key and value pairs. (Similar
+            to hashes)</p>
+        <h4>Logical conditions allow you to control the flow of a program by running different blocks of code.</h4>
+        <p>Think if else statements and the mathematical operators (+,-,*,/,%,==).</p>
+        <p>Switch can be used to string lots of if/else statements together to make a logical decision tree</p>
+        <h4>Loops repeat a piece of code over and ober again according to certain conditions.</h4>
+        <p>While - while (condition) {// do somethig} </p>
+        <p>Do While - do { do something} while(condition) </p>
+        <p>For - for (initialization ; condition ; after) { do something }</p>
+        <p>Nested For Loops - you can place a loop inside another loop</p>
+        <a href="/week2/Ch03quiz/index.html">Quiz Ninja Example Chapter 3</a>
+        <h3>Novice to Ninja Chapter 4 - Functions</h3>
+        <p>Functions are a chunk of code that are given a name then that name can be referenced.</p>
+        <p>To define a function use the "function" declaration followed by the name of the function followed by () and
+            {}. "()" will contain parameters/arguments and "{}" will contain the code for the function.</p>
+        <p>Functions can also be anonymous when being assigned to variables.</p>
+        <p>To invoke a function simply enter its name followed by parentheses.</p>
+        <ul>Arrow Functions
+            <li>Arrow functions can be identified by the arrow symbol => the parameters come before the arrow and the
+                main body of the function comes after. They are always anonymous.</li>
+            <li>They are much less verbose than normal function declarations.</li>
+            <li>Single parameters don't need putting into parentheses.</li>
+            <li>The body of the function doesn't need placing inside a block if it's only one line.</li>
+            <li>The return keyword isn't required if the return statement is the only statement in the body of the
+                function.</li>
+            <li>They don't bind their own value of this to the function.</li>
+        </ul>
+        <p>The JavaScript interpreter moves all variable and function declarations to the top of the current scope
+            regardless of where they are defined. This is known as <strong>Hoisting</strong>. Variables may be moved to
+            the top of the current scope but their assignment is not hoisted. It won't be assigned until defined.</p>
+        <p>Callbacks - a function that is passed as an argument to another function.</p>
+        <a href="/week2/Ch04quiz/index.html">Quiz Ninja Example Chapter 4</a>
+    </main>
+
+    <footer>
+        <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
+    </footer>
+
+</body>
+
+</html>
