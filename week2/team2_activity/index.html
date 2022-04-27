@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Activity 1</title>
+</head>
+
+<body>
+    <h3>Requirement 01</h3>
+    <input id="text_input" type="text"></input>
+    <button onclick="readInput()">Submit</button>
+    <div id="answer"></div>
+
+    <h3>Requirement 02</h3>
+    <input id="number_input" type="number"></input>
+    <button onclick="addNumbers()">Submit</button>
+    <div id="answer2"></div>
+
+    <h3>Requirement 03</h3>
+    <input id="number1" type="number"></input>
+    <input id="number2" type="number"></input>
+    <button onclick="addMachine()">+</button>
+    <div id="answer3"></div>
+
+    <!-- <h3>Stretch Goal</h3>
+    <input id="number1" type="number"></input>
+    <input id="number2" type="number"></input>
+    <button onclick="addMachine()">+</button>
+    <div id="answer3"></div> -->
+
+    <!-- Function Declaration
+    Function Expression
+    Arrow Function -->
+
+    <script type="text/javascript" src="./main.js">
+        function readInput() {
+            let input = document.getElementById("text_input").value
+            document.getElementById("answer").innerHTML = input
+        }
+
+        function addNumbers() {
+            let input = document.getElementById("number_input").value
+            let total = 0
+
+            for (let i = 1; i <= input; i++) {
+                total += i;
+            }
+            document.getElementById("answer2").innerHTML = total
+        }
+
+        function addMachine() {
+            let input1 = parseInt(document.getElementById("number1").value)
+            let input2 = parseInt(document.getElementById("number2").value)
+            let total = input1 + input2
+            document.getElementById("answer3").innerHTML = total
+        }
+    </script>
+</body>
+
+</html>
