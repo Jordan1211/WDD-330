@@ -1,2 +1,133 @@
-Coming soon...
-<h4><a href="../index.html">Back to Home</a></h4>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio Week 3 Notes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h4><a href="../index.html">Back to Home</a></h4>
+    </header>
+
+    <main>
+        <h2>Week 3 Notes</h2>
+        <h3>Object methods, "this": <a
+                href="https://javascript.info/object-methods">https://javascript.info/object-methods</a></h3>
+        <p>The value of "this" is the object “before dot”, the one used to call the method.</p>
+        <p>Remember: A function that is a property of an object is called its method.</p>
+        <p>In JavaScript, keyword this behaves unlike most other programming languages. It can be used in any function,
+            even if it’s not a method of an object.</p>
+        <p>Arrow functions are special: they don’t have their “own” this. If we reference this from such a function,
+            it’s taken from the outer “normal” function.</p>
+
+        <h3>This in JavaScript: <a href="https://zellwk.com/blog/this/">https://zellwk.com/blog/this/</a></h3>
+        <p>What is this? It is a keywork whose value changes depending how a function gets called.</p>
+        <ul>There are 6 different ways where "this" can take on new values:
+            <li>in global context - usually you wouldn't use "this" but the value of this defaults to the "window"
+                object.</li>
+            <li>in object construction - "this" refers to the instance.</li>
+            <li>in an object method - "this" within any method refers to the object iteself.</li>
+            <li>in a simple function - "this" is always set to "window", to fix you can make a variable to store the
+                reference to "this" or use an arrow function.</li>
+            <li>in an arrow function - in an arrow function is always the same as "this" around it.</li>
+            <li>in an event listener - "this" is set to the element that fired the event in an event listener.</li>
+        </ul>
+        <p>"this" is a crucial keyword in JavaScript. It appears in many Javascript frameworks. Some will say don't use
+            "this" because it's confusing but it is important to be able to understand and use "this". Articles like
+            this one can be used as clarification.</p>
+
+        <h3>Novice to Ninja Chapter 5 - Objects</h3>
+        <p>Think of an object as a dictionary where you look up a property name and see a value.</p>
+        <p>const spiderman = {}; - is an example of creating an object literal.</p>
+        <p>You can access properties of an objects properties by using dot notation or bracket notation.</p>
+        <p>New properties and methods can be added to objects at any time in a program. You just assign a value to the
+            new property and it will be slotted under the object. Similarly you can change the value of an object's
+            properties at any time.</p>
+        <p>To remove properties from objects you can use the "delete" operator. <br> For Example: <br> delete
+            superman.fly
+            <br>^ This removes the fly property of the object superman.
+        </p>
+        <p>Objects are not ordered lists like an array or set map. They can change order.</p>
+        <p>(Once again!) The keyword "this" refers to the object that it is within.<strong> It can be used inside
+                methods to gain acess to the object's properties.</strong></p>
+        <p>Namespacing can be used to prevent duplication of functions. This duplication can happen if multiple
+            developers are working in a library or a large sample of code is worked on for a prolonged time, so
+            namespacing can be helpful. Creating a namespace is just making an object that holds the function or
+            functions.</p>
+        <p>JSON (JavaScript Object Notation) is very helpful in being human and machine readable.</p>
+        <a href="/week3/Ch05quiz/index.html">Quiz Ninja Example Chapter 5</a>
+
+        <h3>Novice to Ninja Chapter 6 - Document Object Model</h3>
+        <p>The DOM allows you to access elements of a web page and enable interation.The textbook defines this as it represents an HTML document as a network of connected nodes that form a tree-like structure. Everything is a node!</p>
+        <p>The DOM is language agnostic although it is most commonly used with Javascript.</p>
+        <ul>DOM Methods- most of these do as their name suggests
+            <li>getElementById()</li>
+            <li>getElementsByTagName()</li>
+            <li>getElementByClassName()</li>
+            <li>querySelector() - allows you to use the CSS notation to find the first element in the document that matches. Note that suedoselectors can be used example: 'li:last-child'</li>
+            <li>querySelectorAll() - allows you to use the CSS notation to find all the elements in the document that match.</li>
+        </ul>
+        <ul>Navigating the DOM tree with properties: 
+            <li>childNodes</li>
+            <li>children</li>
+            <li>firstChild</li>
+            <li>lastChild</li>
+            <li>parentNode</li>
+            <li>nextSibling</li>
+            <li>previousSibling</li>
+            <p>These methods find the node not the element. Using these properties allows you to navigate around the whold document tree.</p>
+        </ul>
+        <p>Various different getter and setter methods can be used to reference attributes. For example: getAttribute() and setAttribute() </p>
+        <a href="/week3/Ch06quiz/index.html">Quiz Ninja Example Chapter 6</a>
+
+        <h3>Novice to Ninja Chapter 7 - Events</h3>
+        <p>Events are another part of the DOM and they are what provides the link between the web page and user interactions. Clicking on a link, pressing a key or moving a mouse can be detected and responded to.</p>
+        <p>Think of event listeners as alarms of sorts. They notify us of something happening so we can configure what happens once that something happens.</p>
+        <h4>Old ways to avoid:</h4>
+        <p>Inline event handlers used to be the way to go (think of the onclick="" attribute). This however isn't recommended. Another older way is to use event handler properties that all node objects have (document.onclick for example).</p>
+        <h4>Use Event Listeners!</h4>
+        <p>The current and recommended standard is to use Event Listeners. They are supported in all modern browsers, separate HTML form JS and help with organization.</p>
+        <ul>addEventListener() Types of Events
+            <li>Mouse Events
+                <li>click</li>
+                <li>mousedown</li>
+                <li>mouseup</li>
+                <li>dblclick</li>
+                <p>Remember avoid using click and doubleclick event on the same element.</p>
+                <li>mouseover</li>
+                <li>mouseout</li>
+                <li>mousemove</li>
+            </li>
+            <li>Keyboard Events 
+                <li>keydown</li>
+                <li>keypress</li>
+                <li>keyup</li>
+                <p>Properties included: shiftKey, ctrlKey, altKey, metaKey</p>
+            </li>
+            <li>Touch Events
+                <li>touchstart</li>
+                <li>click</li>
+                <li>touchend</li>
+                <li>touchmove</li>
+                <li>touchenter</li>
+                <li>touchleave</li>
+                <li>touchcancel</li>
+                <p>Properties included: touches and length</p>
+            </li>
+        </ul>
+        <p>An event listener can be removed using the removeEventListener() method.</p>
+        <a href="/week3/Ch07quiz/index.html">Quiz Ninja Example Chapter 7</a>
+    </main>
+
+    <footer>
+        <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
+    </footer>
+</body>
+
+</html>

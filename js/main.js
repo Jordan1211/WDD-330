@@ -1,17 +1,27 @@
+function listWeeklyItems() {
+    console.log(links)
+    for (let i=0; i < links.length; i++) {
+        let type = links[i].type;
+        let url = links[i].url;
+        let label = links[i].label;
 
-
-function listWeeklyItems(link) {
-
-    links.forEach(link => {
-        let list = document.getElementById("weeklylist");
+        let list = document.getElementById("weeklyList");
         let item = document.createElement('li');
         let hyperlink = document.createElement('a');
+        let activity = document.getElementById("teamActivity");
 
-        list.appendChild(item);
-        hyperlink.setAttribute('href',link.url);
-        item.appendChild(hyperlink);
-        hyperlink.textContent = link.label;
-        
-    });
-    
+            if (type == "notes") {
+                console.log(type);
+                list.appendChild(item);
+                hyperlink.setAttribute('href', url);
+                item.appendChild(hyperlink);
+                hyperlink.textContent = label;
+            } else {
+                activity.appendChild(item);
+                hyperlink.setAttribute('href', url);
+                item.appendChild(hyperlink);
+                hyperlink.textContent = label;
+            }
+            };    
+
 }
