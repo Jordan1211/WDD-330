@@ -43,3 +43,10 @@ header a {
     margin:0;
     color: red;
 }
+
+form {
+    background-color: #495e7d;
+    border: #CCA43B 3px dotted;
+    padding: 5%;
+    color: #E5E5E5;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<style>
+    .board {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        font-size: 15vw;
+        max-height: 500px;
+        max-width: 500px;
+        margin: 20vw;
+    }
+    
+    .box {
+        height: 20vw;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .box:nth-child(3n + 1) {
+        border-right: 2px black solid;
+    }
+
+    .box:nth-child(3n + 3) {
+        border-left: 2px black solid;
+    }
+
+    .box:nth-child(-n+3) {
+        border-bottom: 2px black solid;
+    }
+
+    .box:nth-child(n+7) {
+        border-top: 2px black solid;
+    }
+
+    div.button {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        height: 100px;
+        width: 300px;
+        font-size: 45px;
+    }
+
+</style>
+<body>
+    <div class="board">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+        <div class="box" id="box7"></div>
+        <div class="box" id="box8"></div>
+        <div class="box" id="box9"></div>
+    </div>
+    <div class="button">    
+        <button id="resetXO">Reset</button>
+    <div>
+</body>
+<script>
+    
+    const grid = document.getElementById("board");
+const one = document.getElementById("box1");
+const two = document.getElementById("box2");
+const three = document.getElementById("box3");
+const four = document.getElementById("box4");
+const five = document.getElementById("box5");
+const six = document.getElementById("box6");
+const seven = document.getElementById("box7");
+const eight = document.getElementById("box8");
+const nine = document.getElementById("box9");
+
+let turn = 1;
+
+function xAndO(event) {
+    if (turn === 1) {
+        event.target.innerText = "X";
+        turn = 2;
+    } else {
+        event.target.innerText = "O";
+        turn = 1;
+    }
+}
+
+function reset(event) {
+    one.innerText = "";
+    two.innerText = "";
+    three.innerText = "";
+    four.innerText = "";
+    five.innerText = "";
+    six.innerText = "";
+    seven.innerText = "";
+    eight.innerText = "";
+    nine.innerText = "";
+}
+
+one.addEventListener("touchend", xAndO);
+two.addEventListener("touchend", xAndO);
+three.addEventListener("touchend", xAndO);
+four.addEventListener("touchend", xAndO);
+five.addEventListener("touchend", xAndO);
+six.addEventListener("touchend", xAndO);
+seven.addEventListener("touchend", xAndO);
+eight.addEventListener("touchend", xAndO);
+nine.addEventListener("touchend", xAndO);
+
+btn = document.getElementById("resetXO");
+btn.addEventListener("click", reset);
+
+</script>
+</html>

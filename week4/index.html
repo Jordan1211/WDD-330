@@ -17,12 +17,169 @@
 
     <main>
         <h2>Week 4 Notes</h2>
-        <h3>Coming soon...</h3>
+        <h3>Novice to Ninja Chapter 8- Forms</h3>
+        <p>Most of us use forms every day to log in to our favorite sites. They are a very common method of interaction.
+            They are made up of a "form" element and have controls such as input fields, select menus and buttons.
+            Traditionally information gathered from a form was esnt to a 'back end' language such as PHP or Ruby. It's
+            becoming more and more common to process informaiton in a form on the 'back end'.</p>
+        <h4>Simple Search Example:</h4>
+        <form name='search' action='search.html'>
+            <input name='searchInput'>
+            <button type='submit'>Search</button>
+        </form>
+        <p>You can reference forms in the document (in the order they appear using) "document.forms". This can be used
+            in combination with other useful things. "form.elements" can be used to access the colection of elements
+            within forms. You can also access the form controls using ther name attributes for example:
+            "form.searchInput". Squar bracket notation can also be used "form['searchInput'].</p>
+        <ul>Form Properties, Methods and Events:
+            <li>form.submit() method - automatically submits the form.</li>
+            <li>form.reset() method - reset controls back to inital values. A button with a type attribute of reset can
+                also be used.</li>
+            <li>form.action property - can set the action attribute of a form (so it is sent to a different URL).</li>
+            <li>focus event - occurs when an element is focused on.</li>
+            <p>const input = form.elements.searchInput; <br> input.addEventListener('focus', () => alert('focused'),
+                false);</p>
+            <li>blur event - occurs when the user moves the focus away from the form.</li>
+            <li>change event - occurs when the user moves the focus away from the form <i>after</i> changing it.</it>
+            </li>
+            <li>submit event - possible the most important form event.</li>
+        </ul>
+        <p>Text input element objects have a "value" property that can be used to retrieve the text inside the field.
+            <strong>Think about the example: </strong><br><br> function search(event) {
+            <br> alert(`You Searched for: ${input.value}`);
+            <br> event.preventDefault();
+            }
+        </p>
+        <p>Javascript can also be used to set the value. Like: "input.value = 'Search Here';". The problem with this is
+            that the text remains in the field when the user clicks inside it, so it has to be deleted before the user
+            can enter their own text. This is easily remedied using the focus and blur event handlers. Similar
+            functionality can be produced in modern browsers using the placeholder attribute.</p>
+        <ul>Form Controls (these should look familiar):
+            <li>input</li>
+            <li>select</li>
+            <li>textarea</li>
+            <li>button</li>
+        </ul>
+        <h4>Example using form controls:</h4>
+        <form id='hero'>
+            <label for='heroName'>Name:
+                <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name'
+                    maxlength=32>
+            </label>
+            <button type='submit'>Submit</button>
+            <label for='donation-amount'>Enter amount to donate:
+                <input type='text' id='donation-amount' name='donationAmount' value='10'>
+            </label>
+            <label for='realName'>Real Name:
+                <input type='password' name='realName' id='realName'></label>
+            <p>Super Powers:</p>
+            <label for='flight'>Flight:
+                <input type='checkbox' id='flight' value='Flight' name='powers'>
+            </label>
+            <label for='strength'>Super Strength:
+                <input type='checkbox' id='strength' value='Strength' name='powers'>
+            </label>
+            <label for='speed'>Super Speed:
+                <input type='checkbox' id='speed' value='Super Speed' name='powers'>
+            </label>
+            <label for='energy'>Energy Blasts:
+                <input type='checkbox' id='energy' value='Energy Blasts' name='powers'>
+            </label>
+            <label for='telekinesis'>Telekinesis:
+                <input type='checkbox' id='telekinesis' value='Telekinesis' name='powers'>
+            </label>
+            <p>What type of hero are you?</p>
+            <label for='hero'>Hero:
+                <input type='radio' name='category' value='Hero' id='hero'>
+            </label>
+            <label for='villain'>Villain:
+                <input type='radio' name='category' value='Villain' id='villain'>
+            </label>
+            <label for='anti-hero'>Anti-Hero:
+                <input type='radio' name='category' value='Antihero' id='anti-hero'>
+            </label>
+            <input type='radio' name='type' value='Villain' checked>
+            <label for='age'>Age:
+                <input type='number' id='age' name='age' min=0 step=1></label>
+            <label for='City'>Base of Operations:
+                <select name='city' id='city'>
+                    <option value='' selected>Choose a City</option>
+                    <option value='Metropolis'>Metropolis</option>
+                    <option value='Gotham City'>Gotham City</option>
+                    <option value='Keystone City'>Keystone City</option>
+                    <option value='Coast City'>Coast City</option>
+                    <option value='Star City'>Star City</option>
+                </select>
+            </label>
+            <label for='origin'>Origin Story:
+                <textarea id='origin' name='origin' rows='20' cols='60'></textarea>
+            </label>
+            <button type='reset'>Reset</button>
+            <button type='submit' id='submit' disabled>Submit</button>
+        </form>
+        <a href="/week4/Ch08quiz/index.html">Quiz Ninja Example Chapter 8</a>
+
+        <h3>Novice to Ninja Chapter 12- Object-Oriented Programming in JavaScript</h3>
+        <p>Object-Oriented Programming (OOP) is a style of programming that involves separating code into objects that
+            have properties and methods.</p>
+        <ul>Juicer Metaphor:
+            <li>Encapsulation -- You can press on or off but how the machine works is all inside. With encapsulation you
+                keep programming logic inside an object making methods available to implement without the outside world
+                needing to know how it is done.</li>
+            <li>Polymorphism -- Many other appliances have an on/off button but each one works slightly different. In
+                OOP this means various objects can share the same method. They can also override shared methods with
+                amore specific implementation if needed.</li>
+            <li>Inheritance -- Upgrades People! Taking the features of one objec then adding new features that improve
+                functionality.</li>
+        </ul>
+        <p>Enumerable Properties - properties of objects in JavaScript are said to be enumerable or non-enumerable. If
+            they aren't enumerable, this means they will not show up when a "for-in" loop is used to loop through an
+            object's properties and methods.</p>
+        <a href="/week4/Ch12quiz/index.html">Quiz Ninja Example Chapter 12</a>
+
+        <h3>Novice to Ninja Chapter 15: Modular Javascript- Modern JavaScript Development</h3>
+        <p>Javascript library - a piece of code that provides several methods that make it easier to achieve common
+            tasks without having to use repetitve code.</p>
+        <p>Libraries (such as jQuery) are often well-tested and resistent to bugs that may be difficult to work with.
+            Along with this they unify standards. For example configuring event listeners to work with older browsers.
+        </p>
+        <p>jQuery is a very powerful and polished library that provides a considerable number of useful methods. It has
+            become so popular that many online tutorials assume you’re using jQuery rather than just JavaScript.</p>
+        <p>Underscore & Lodash are very similar libraries. They have a large number of utility functions under the
+            namespace "_". It is worth considering using one of these. Lodash can be thought of as a 'superset' of
+            Underscore.</p>
+        <ul>Advantages of Libraries:
+            <li>Used by lots of people</li>
+            <li>Thoroughly tested</li>
+            <li>Optimized & Battle tested</li>
+            <li>Will ensure wide browser functionality</li>
+            <li>Online documentation</li>
+            <li>Online community</li>
+        </ul>
+        <ul>Disadvantages of Libraries:
+            <li>Larger amount of code for a website to download</li>
+            <li>Performance issues if code is too large</li>
+            <li>Could fail to implement the functionality in the precise way you want</li>
+        </ul>
+        <p>Be careful not to rely on a library and find that you’re learning how to use the library's methods, rather
+            than the language itself. A library should not be used because of a lack of understanding of JavaScript.</p>
+        <p>As modules have become more widely used in JavaScript, there’s been a need for tools to manage them. Package
+            managers allow developers to download modules from a central repository.</p>
+        <p>When you install a package using npm it will become a dependency of your project by default.</p>
+        <p>Content delivery networks (CDNs) are systems of distributed servers that can deliver web resources, such as
+            JavaScript, CSS or image files to a user based on their geographic location.</p>
+        <p>Rather than use separate .js files you should combine all the scripts into a single minified and compressed
+            file. This file is often named 'bundle.min.js' to signify that it’s a number of files bundled together and
+            has also been minified.</p>
+        <a href="/week4/Ch15quiz/index.html">Quiz Ninja Example Chapter 15</a>
+
     </main>
 
     <footer>
         <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
     </footer>
+
+    <script src='main.js'></script>
 </body>
 
 </html>
