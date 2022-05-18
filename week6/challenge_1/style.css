@@ -1,0 +1,48 @@
+#todo {
+    font-size: 2vw;
+    text-align: center;
+    background-color: #ebe0c3;
+    box-shadow: 10px 10px 8px 10px #888888;
+    margin: 0;
+    padding: 5px;
+}
+
+#listdisplay {
+    display: grid;
+    grid-template-columns: 50vw 10vw 10vw;
+    grid-template-rows: 1fr 1fr 1fr;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+#listdisplay li {
+    display: flex;
+    justify-content: center;
+}
+
+#listdisplay li:nth-child(-n+3) {
+    font-size: 2vw;
+    background-color: #CCA43B;
+    color: #E5E5E5;
+    font-weight: bolder;
+}
+
+.item {
+    border: 1px solid black;
+    grid-column: 1;
+}
+
+.done {
+    border: 1px solid black;
+    grid-column: 2;
+}
+
+.remove {
+    border: 1px solid black;
+    grid-column: 3;
+    font-size: 2vw;
+    color: darkred;
+    display: flex;
+    align-items: center;
+}
