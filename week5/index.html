@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio Week 3 Notes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h4><a href="../index.html">Back to Home</a></h4>
+    </header>
+
+    <main>
+        <h2>Week 5 Notes</h2>
+        <h3>Novice to Ninja Chapter 10 - Testing and Debugging</h3>
+        <h4>Errors</h4>
+        <p>System error - there’s a problem with the system or external devices with which the program is interacting.
+        </p>
+        <p>Programmer error - the program contains incorrect syntax or faulty logic; it could even be as simple as a
+            typo.</p>
+        <p>User error - the user has entered data incorrectly, which the program is unable to handle.</p>
+        <h4>Exceptions</h4>
+        <p>An exception is an error that produces a return value that can be used by the program to deal with the error.
+        </p>
+        <p>Stack traces help you find where an erorr orignates from. Remember the example:
+            <br>function three(){ unicorn(); }
+            <br>function two(){ three(); }
+            <br>function one(){ two(); }
+            <br>one();
+            <br>
+            <br><i>output:</i>
+            <br>index.html:13 Uncaught ReferenceError: unicorn is not defined
+            <br>at three (index.html:13)
+            <br>at two (index.html:17)
+            <br>at one (index.html:21)
+            <br>at index.html:24`
+        </p>
+        <h4>Warnings</h4>
+        <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash. This
+            means the program will continue to run after a warning.</p>
+        <p>Warnings may be problematic because the program continues to run. This can be avoided with proper user
+            testing.</p>
+        <h4>Why is Testing and Debugging Important?</h4>
+        <p>Failing gracefully rather than silently is the goal. When you fail silently things can be missed and
+            overlooked than cause issues down the road.</p>
+        <p>Strict mode can be used in order to increase the ability to catch errors. When you aren't in strict mode you
+            are in "sloppy mode" because sloppy proctices can sneak through</p>
+        <p>To use strict mode place 'use strict'; at the top line of your js file. You can also place 'use strict';
+            inside a function.</p>
+        <p>The suggested way to do this is:
+            <br>(function() {
+            <br>'use strict';
+            <br>
+            <br>// All your code would go inside this function
+            <br>
+            <br>}());
+        </p>
+        <p>Linting tools are a great way to adhere to certain conventions. There are online or add-on linters that can
+            be used.</p>
+        <p>To find if browser supports a certain feature you can use an if statement a library like Modernizir or
+            broswer sniffing. This is refered to as "Feature Detection"</p>
+        <h4>Debugging is the process of finding out where bugs occur in the code and then dealing with them.</h4>
+        <p>This is usually done with manual coding or using developer tools to set breakpoints. Alerts can return the
+            value of a certain variable. The console can also be used to do the same thing. Most modern browsers have
+            debugging tools that can be used.</p>
+        <p>The 'debugger' keyword will create a breakpoint in your code that will pause the execution of the code and
+            allow you to see where the program is currently up to. You can also hover over any variables to see what
+            value they hold at that point. <strong>You should be sure to remove references to the debugger command before deploying.</strong></p>
+        <ul>Error Objects:
+            <li>Error</li>
+            <li>EvalError</li>
+            <li>RangeError</li>
+            <li>ReferenceError</li>
+            <li>SyntaxError</li>
+            <li>TypeError</li>
+            <li>URIError</li>
+            <li>InternalError</li>
+            <li>URIError</li>
+            <p>Properties for these in most browsers are "name", "message" and "stack".</p>
+        </ul>
+        <p>You can throw your own exception using the 'throw' statement. You can also manually code a try and catch blocks to be a sort of error handler. The try holds a piece of code we think may fail. The catch block can pass then pass the error if that happens.</p>
+        <h4>Test, Test and Test Some More!</h4>
+            <p>By testing with system, programmer and user errors in mind you can avoid headaches in the future.</p>
+            <ol>Test-driven development (TDD) is the process of writing tests before any actual code. The process for this is as follows:
+                <li>Write tests (that initially fail)</li>
+                <li>Write code to pass the tests</li>
+                <li>Refactor the code</li>
+                <li>Test refactored code</li>
+                <li>Write more tests for new features</li>
+            </ol>
+            <p>You can make your own tests but this can be a hard task. To help with this Testing Frameworks have been developed.</p>
+        <a href="/week5/Ch10quiz/index.html">Quiz Ninja Example Chapter 10</a>
+    </main>
+
+    <footer>
+        <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
+    </footer>
+    <script>
+        function squareRoot(number) {
+            'use strict';
+            if (number < 0) {
+                throw new RangeError("You can't find the square root of negative numbers")
+            }
+            return Math.sqrt(number);
+        };
+
+        test('square root of 4 is 2', () => {
+            expect(squareRoot(4)).toBe(2);
+        });
+    </script>
+</body>
+
+</html>

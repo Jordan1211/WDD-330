@@ -9,10 +9,15 @@ function listWeeklyItems() {
         let item = document.createElement('li');
         let hyperlink = document.createElement('a');
         let activity = document.getElementById("teamActivity");
+        let challenge = document.getElementById("challenge");
 
             if (type == "notes") {
-                console.log(type);
                 list.appendChild(item);
+                hyperlink.setAttribute('href', url);
+                item.appendChild(hyperlink);
+                hyperlink.textContent = label;
+            } else if (type == "challenge") {
+                challenge.appendChild(item);
                 hyperlink.setAttribute('href', url);
                 item.appendChild(hyperlink);
                 hyperlink.textContent = label;
