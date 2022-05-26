@@ -1,6 +1,4 @@
-//acts as a controller
+import ToDos from "./todo.js";
 
-import ToDos from './todo.js';
-
-const list = document.getElementById('listdisplay');
+const list = document.getElementById('todoList');
 const myToDos = new ToDos(list, 'todo');
