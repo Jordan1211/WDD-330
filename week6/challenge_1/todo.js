@@ -1,4 +1,9 @@
-import {qs, writesToLS, readFromLS, bindTouch} from "./utils.js";
+import {
+    qs,
+    writesToLS,
+    readFromLS,
+    bindTouch
+} from "./utils.js";
 
 let liveToDos = null;
 
@@ -13,24 +18,23 @@ function renderList(list, element, toDos, hidden) {
         let cb = null;
         let btn = null;
 
-        if(hidden && toDo.completed){
-            item.innerHTML = '<label><input type ="checkbox" checked> <strike>'+ toDo.content +'</strike></label><button>X</button>';
-        } 
-        else {
+        if (hidden && toDo.completed) {
+            item.innerHTML = '<label><input type ="checkbox" checked> <strike>' + toDo.content + '</strike></label><button>X</button>';
+        } else {
             item.innerHTML = '<label><input type ="checkbox">' + toDo.content + '</label><button>X</button>';
         }
 
         cb = item.childNodes[0].childNodes[0];
 
-        if(cb){
-            cb.addEventListener("change", function() {
+        if (cb) {
+            cb.addEventListener("change", function () {
                 toDos.completeToDo(toDo.id);
             });
         }
 
         btn = item.childNodes[1];
-        if(btn) {
-            btn.addEventListener("click", function() {
+        if (btn) {
+            btn.addEventListener("click", function () {
                 toDos.removeToDo(toDo.id);
             });
         }
@@ -40,13 +44,13 @@ function renderList(list, element, toDos, hidden) {
 }
 
 function getToDos(key) {
-    if(liveToDos === null) {
+    if (liveToDos === null) {
         liveToDos = readFromLS(key) || [];
     }
     return liveToDos;
 }
 
-function addToDo(value,key) {
+function addToDo(value, key) {
     const newToDo = {
         id: new Date(),
         content: value,
@@ -54,7 +58,7 @@ function addToDo(value,key) {
     };
 
     liveToDos.push(newToDo);
-    writesToLS(key,liveToDos);
+    writesToLS(key, liveToDos);
 }
 
 function deleteToDo(key) {
@@ -63,7 +67,7 @@ function deleteToDo(key) {
     writesToLS(key, liveToDos);
 }
 
-function filterToDos(key, completed = true) {
+function filterToDos(key, completed=true, hidden=true) {
     let toDos = getToDos(key);
 
     return toDos.filter(item => item.completed === hidden);
@@ -72,20 +76,20 @@ function filterToDos(key, completed = true) {
 export default class ToDos {
     constructor(listElement, key) {
         this.listElement = listElement;
-            console.log(this);
+        console.log(this);
         this.key = key;
 
         bindTouch("#addToDo", this.newToDo.bind(this));
         this.listToDos();
 
         bindTouch("#allToDo", this.allToDo.bind(this));
-        this.listToDos();
+        this.allToDo();
 
         bindTouch("#activeToDo", this.activeToDo.bind(this));
-        this.listToDos();
+        this.activeToDo();
 
         bindTouch("#compToDo", this.compToDo.bind(this));
-        this.listToDos();
+        this.compToDo();
     }
 
     newToDo() {
@@ -96,7 +100,7 @@ export default class ToDos {
     }
 
     findTodo(id) {
-        let toDo = liveToDos.find( element => {
+        let toDo = liveToDos.find(element => {
             return element.id === id;
         });
         return toDo;
@@ -106,18 +110,18 @@ export default class ToDos {
         console.log(id + "checked");
         let toDo = this.findTodo(id);
 
-        if(toDo){
+        if (toDo) {
             toDo.completed = !toDo.completed;
             writesToLS(this.key, liveToDos);
             renderList(liveToDos, this.listElement, this, true);
         }
     }
-    
+
     removeToDo(id) {
         console.log(id + "removed");
         let toDo = this.findTodo(id);
         console.log(toDo);
-        if(toDo){
+        if (toDo) {
             deleteToDo(id);
             renderList(liveToDos, this.listElement, this, true);
         }
@@ -132,13 +136,13 @@ export default class ToDos {
         renderList(getToDos(this.key), this.listElement, this, hidden);
     }
 
-    activeToDo(completed = false) {
+    activeToDo(completed=false, hidden=true) {
         console.log("Here are the active the ToDos");
-        filterToDos(getToDos(this.key, completed))
+            filterToDos(completed,hidden);
     }
 
-    compToDo(completed = true) {
+    compToDo(completed=true, hidden=true) {
         console.log("Here are the completed ToDos");
-        filterToDos(getToDos(this.key, completed))
+        filterToDos(completed, hidden);
     }
 }
