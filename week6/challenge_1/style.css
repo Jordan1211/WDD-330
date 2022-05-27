@@ -22,3 +22,14 @@
 .todo li label input {
     transform: scale(2);
 }
+
+.filtertodo {
+    display: flex;
+    padding: 5px;
+    background-color: #CCA43B;
+}
+.filtertodo button, .filtertodo p {
+    margin: 1px;
+    transform: scale(.75);
+
+}
