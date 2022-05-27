@@ -67,11 +67,12 @@ function deleteToDo(key) {
     writesToLS(key, liveToDos);
 }
 
-function filterToDos(key, completed=true, hidden=true) {
+function filterToDos(key, completed) {
     let toDos = getToDos(key);
 
-    return toDos.filter(item => item.completed === hidden);
+    return toDos.filter(item => item.completed === completed);
 }
+
 
 export default class ToDos {
     constructor(listElement, key) {
@@ -80,16 +81,10 @@ export default class ToDos {
         this.key = key;
 
         bindTouch("#addToDo", this.newToDo.bind(this));
-        this.listToDos();
-
         bindTouch("#allToDo", this.allToDo.bind(this));
-        this.allToDo();
-
         bindTouch("#activeToDo", this.activeToDo.bind(this));
-        this.activeToDo();
-
         bindTouch("#compToDo", this.compToDo.bind(this));
-        this.compToDo();
+        this.listToDos();
     }
 
     newToDo() {
@@ -136,13 +131,15 @@ export default class ToDos {
         renderList(getToDos(this.key), this.listElement, this, hidden);
     }
 
-    activeToDo(completed=false, hidden=true) {
+    activeToDo(hidden = true) {
         console.log("Here are the active the ToDos");
-            filterToDos(completed,hidden);
+        let todos = filterToDos(this.key, false);
+        renderList(todos, this.listElement, this, hidden);
     }
 
-    compToDo(completed=true, hidden=true) {
+    compToDo(hidden = true) {
         console.log("Here are the completed ToDos");
-        filterToDos(completed, hidden);
+        let todos = filterToDos(this.key, true);
+        renderList(todos, this.listElement, this, hidden);
     }
 }
