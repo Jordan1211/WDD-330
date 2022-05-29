@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio Week 3 Notes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h4><a href="../index.html">Back to Home</a></h4>
+    </header>
+
+    <main>
+        <h2>Week 7 Notes</h2>
+        <h3>Novice to Ninja Chapter 11 - Further Functions</h3>
+        <h4>Functions are first-class objects which means they can be passed around in the same way as
+            every other value. </h4>
+        <li>They have their own properties and methods</li>
+        <p>One example of a property is the <i>length</i> property that returns the number of parameters the function
+            has.</p>
+        <p>call() and apply() are examples of methods. The call() method can be used to set the value of "this" inside a
+            function to an object that is provided as the first argument. (I think it is easier just to use this but in
+            some situations call can be used). The apply() method works the same except the arguments of the function
+            are provided as an array. Which can be useful if the data you're using is already in an array. <br>For
+            example:<br> square.apply(<i>null</i>, [4])</p>
+        <p>You can make your own custom property <br>
+            For example: <br>square.description = 'Squares a number that is provided as an argument'
+            <br> -- 'Squares a number that is provided as an argument'
+        </p>
+
+        <li>They accept other functions as parameters</li>
+        <li>They can be returned by other functions</li>
+        <p><strong>Immediately Invoked Function Expression </strong> – or IIFE – (pronounced 'iffy') is an anonymous
+            function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing
+            parentheses at the end of the function definition (remember we use parentheses to invoke a function). The
+            function also has to be made into an expression, which is done by placing the whole declaration inside
+            parentheses. IIFE can be leveraged in order to create temporary variables. It can also be used to set up any initialization code that there’ll be no need for again.</p>
+        <p></p>
+        <a href="/week7/Ch11quiz/index.html">Quiz Ninja Example Chapter 11</a>
+
+        <h3>Novice to Ninja Chapter 13 - AJAX</h3>
+        <a href="/week7/Ch13quiz/index.html">Quiz Ninja Example Chapter 13</a>
+    </main>
+
+    <footer>
+        <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
+    </footer>
+</body>
+
+</html>
