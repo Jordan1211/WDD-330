@@ -39,11 +39,120 @@
             function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing
             parentheses at the end of the function definition (remember we use parentheses to invoke a function). The
             function also has to be made into an expression, which is done by placing the whole declaration inside
-            parentheses. IIFE can be leveraged in order to create temporary variables. It can also be used to set up any initialization code that there’ll be no need for again.</p>
-        <p></p>
+            parentheses. IIFE can be leveraged in order to create temporary variables. It can also be used to set up any
+            initialization code that there’ll be no need for again.</p>
+        <p>An IIFE can be used to enclose a block of code inside its own private scope so it doesn’t interfere with any
+            other part of the program. Using IIFEs in this way means code can be added or removed separately. </p>
+        <p>By assigning an anonymous function to a variable that has the same name as the function you can redefine it.
+            You can redefine functions or they can even call themselves.</p>
+        <p>Init-time branching enables the functions to work more effectively in the browser, and avoid checking for
+            features every time they’re invoked.</p>
+        <p>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use
+            when iterative processes are involved.</p>
+        <h4>Callback Example:</h4>
+        <p>function wait(message, callback, seconds){
+            <br>setTimeout(callback,seconds * 1000);
+            <br>console.log(message);
+            <br>}
+            <br>
+            <br>function selfDestruct(){
+            <br> console.log('BOOOOM!');
+            <br>}
+            <br>
+            <br>wait('This tape will self-destruct in five seconds ... ', selfDestruct, 5);
+            <br>console.log('Hmmm, should I accept this mission or not ... ?');
+            <br>
+            <br> -- 'This tape will self-destruct in five seconds ... '
+            <br> -- 'Hmmm, should I accept this mission or not ... ? '
+            <br> -- 'BOOOOM!'
+        </p>
+        <p>The setTimeout() function is asynchronous, which means that the callback provided as an argument is placed on
+            top of a stack that gets cleared once the rest of the program has run. This means that control is handed
+            back to the program and the next line in the program is run, which displays the message ‘Hmmm, should I
+            accept this mission or not ... ?’ Then, after five seconds, the callback is retrieved from the stack and
+            invoked. This demonstrates that the setTimeout() function did not block the rest of the program from
+            running. This is known as the JavaScript event-loop</p>
+        <a href="http://callbackhell.com/">http://callbackhell.com/</a>
+        <p>A promise represents the future result of an asynchronous operation. Promises don't do anything that can't
+            already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that
+            can result from using multiple callbacks.</p>
+        <a href="https://weekly-geekly.imtqy.com/articles/323066/index.html">Promises on the example of a burger
+            party</a>
+        <p>Closures are one of JavaScript’s most powerful features, but they can be difficult to get your head around
+            initially.</p>
+        <p>Whenever a function is defined inside another function, the inner function will have access to any variables
+            that are declared in the outer function's scope. A closure is formed when the inner function is returned by
+            the outer function, maintaining access to any variables declared inside the enclosing function. A closure
+            doesn't just have access to the value of a variable, it can also change the value of the variable long after
+            the function in which it was originally declared has been invoked.</p>
+        <p>To define a generator function, an asterisk symbol (*) is placed after the function declaration. Calling a
+            generator function doesn’t actually run any of the code in the function; it returns a Generator object that
+            can be used to create an iterator that implements a next() method that returns a value every time the next()
+            method is called.
+        </p>
+        <ul>A pure function is a function that adheres to the following rules:
+            <ol>The return value of a pure function should only depend on the values provided as arguments. It doesn't
+                rely on values from somewhere else in the program.</ol>
+            <ol>There are no side-effects. A pure function doesn't change any values or data elsewhere in the program.
+                It only makes non-destructive data transformations and returns new values, rather than altering any of
+                the underlying data.</ol>
+            <ol>Referential transparency. Given the same arguments, a pure function will always return the same result.
+            </ol>
+            <p>In order to follow these rules, any pure function must have: At least one argument; otherwise the return
+                value must depend on something other than the arguments of the function, breaking the first rule. A
+                return value; otherwise there’s no point in the function (unless it has changed something else in the
+                program – in which case, it’s broken the 'no side-effects' rule).</p>
+        </ul>
+        <h4>Higher-Order Functions</h4>
+        <p>Higher-order functions are functions that accept another function as an argument, or return another function
+            as a result, or both.</p>
         <a href="/week7/Ch11quiz/index.html">Quiz Ninja Example Chapter 11</a>
 
         <h3>Novice to Ninja Chapter 13 - AJAX</h3>
+        <p>The web of computers known as the internet can be separated into two parts: clients and servers. A client,
+            such as a web browser, will request a resource (usually a web page) from a server, which processes the
+            request and sends back a response to the client.</p>
+        <p>The term 'Ajax' was coined by Jesse James Garrett in 2005 in the article “Ajax: A New Approach to Web
+            Applications,” where he referred to techniques being used by Google in its recent web applications.</p>
+        <ul>
+            <li><strong>Asynchronous </strong> - When a request for data is sent, the program doesn’t have to stop and
+                wait for the response. It can carry on running, waiting for an event to fire when a response is
+                received. By using callbacks to manage this, programs are able to run in an efficient way, avoiding lag
+                as data is transferred back and forth.</li>
+            <li><strong>JavaScript </strong> - JavaScript was always considered a 'front-end' language, not used to
+                communicate with the server. Ajax enabled JavaScript to send requests and receive responses from a
+                server, allowing content to be updated in real time.</li>
+            <li><strong>XML </strong> - When the term Ajax was originally coined, XML documents were often used to
+                return data. Many different types of data can be sent, but by far the most commonly used in Ajax
+                nowadays is JSON, which is more lightweight and easier to parse than XML.</li>
+        </ul>
+        <ul>Fetch Responses:
+            <li>Text response - response.text - transforms the text stream into a JavaScript string</li>
+            <li>Blob response - response.blob - transforms the data into a blob object</li>
+            <li>JSON response - response.json - transforms the JSON data into a JavaScript object</li>
+            <li>Creating a response object - you can also create your own response objects using a constructor function
+                <br><strong>For example:</strong>
+                <br>const response = new Response( 'Hello!', {
+                <br> ok: true,
+                <br> status: 200,
+                <br> statusText: 'OK',
+                <br> type: 'cors',
+                <br> url: '/api'
+                <br> });
+            </li>
+        </ul>
+        <a href="https://robm.me.uk/2013/09/http-verbs/">HTML Verb article</a>
+        <p> HTTP verbs, also known as HTTP methods are the what HTTP uses to tell the server what type of request is
+            being made.</p>
+        <a href="./ajax.html">Ajax Example (Chuck Norris & Numbers API)</a>
+        <p>This example shows how easy it is to request data from a server, then insert it into a web page, although
+            there are some subtle differences depending on what type of data is returned. Note when receiving
+            information a spinner can be used to show a wait. Ajax Load and Preloaders.net are both good resources for
+            creating a spinner graphic for your site.</p>
+        <a href="./todo.html">Todo Example</a>
+        <p>This todo example shows how APIs can be utilized to simplify! This code creates an event listener that first
+            of all prevents the default behavior of the form, so it doesn't get submitted when the Add Task button is
+            clicked.</p>
         <a href="/week7/Ch13quiz/index.html">Quiz Ninja Example Chapter 13</a>
     </main>
 
