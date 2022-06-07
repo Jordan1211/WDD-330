@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="en" manifest="herald.appcache">
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Herald</title>
+  <link rel="stylesheet" href="css/normalize.css?v=1.0">
+  <link rel="stylesheet" href="css/style.css?v=1.0.7">
+  <style>
+      @keyframes bike {
+    0% {
+    background-position: 0 0;
+    }
+    100% {
+    background-position: -360px 0;
+    }
+}
+@keyframes move {
+    0% {
+    transform: translateX(-100px);
+    }
+    100% {
+    transform: translateX(100px);
+    }
+}  
+    
+h1:after {
+    content: '';
+    width: 90px;
+    height: 92px;
+    background-image: url(bike_sprite.png);
+    display: block;
+    margin: auto;
+    animation: 
+        0.4s steps(4, end) infinite 50ms bike,
+        8s linear infinite 50ms move;
+    animation-play-state: paused;
+}
+h1:hover:after {
+    animation-play-state: running;
+}
+  </style>
+
+  <script src="js/modernizr.min.js"></script>
+
+
+</head>
+<body class="hyphenate">
+    <a href="index.html">Back to Week 8 Notes</a>
+<header>
+    <h1>The Bike Example</h1>
+    <p>Hover to watch him move!</p>
+    
+<script src="js/hyphenator.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/videoControls.js"></script>
+<script src="js/dragDrop.js"></script>
+<script src="js/geolocation.js"></script>
+<script src="js/videoToBW.js"></script>
+<!-- google maps API -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+</body>
+</html>

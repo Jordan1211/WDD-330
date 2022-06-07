@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio Week 3 Notes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <style>
+        .myCanvas {
+            border: dotted 2px black;
+        }
+    </style>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h4><a href="../index.html">Back to Home</a></h4>
+    </header>
+
+    <main>
+        <h2>Week 8 Notes</h2>
+        <h3> HTML5 & CSS3 for the Real World Chapter 8 - Transforms and Transitions</h3>
+        <h4>The transform property lets you translate, rotate, scale and/or skew any element on the page.</h4>
+        <ul>
+            <li><i>Transaltion</i> - lets you move elements without impacting the flow of the document. A translated
+                element can only be moved relative to its current position. In this example x moves and element from the
+                left and y from the top. Hint: negatives can be used to go from the right or bottom.
+                <br><strong>translate(x,y)</strong>
+            </li>
+            <li><i>Scaling</i> - <strong>scale(x,y)</strong> scales an element by the defined factors horizontally then
+                vertically. If only one value is provided, it is used for both.</li>
+            <li><i>Rotation</i> - <strong>rotate()</strong> rotates an element around the point of origin by a specified
+                angle value. As with scale, by default the point of origin is the element’s center. Generally, angles
+                are declared in degrees, with positive degrees moving clockwise and negative moving counterclockwis.
+            </li>
+            <li><i>Skew</i> - <strong>skew(x,y)</strong> specifies a skew along the x and y axes. If only 1 value is
+                provided then x will only be skewed. Skew can be thought of as slighly twisted but its best to try it to
+                get what a skew is.</li>
+            <li><i>Changing the Origin of the Transform</i> - you can control the origin from which your transforms are
+                applied. For example if you use this on a circle it can slightly change the origin so it moves rather
+                than rotating where you wouldn't see a difference.</li>
+            <li><i>Choose your Order carefully</i> - The order of transform functions does matter! </li>
+        </ul>
+        <h4>Transitions allow the values of CSS properties to change over time, essentially providing simple animations.
+            We can animate any of the transforms so that our pages feel more dynamic.</h4>
+        <p>The transition properties allow for multiple transitions in one call. For example, if we want to change the
+            color at the same time as changing the rotation and size, we can.<br>
+            For Example:<br>
+            <br>transition-property: transform, color;
+            <br> transition-duration: 0.2s;
+            <br>transition-timing-function: ease-out;
+            <br>transition-delay: 50ms;
+        </p>
+        <h4>Animations - CSS animations, unlike transitions, allow you to control each step of an animation via
+            keyframes.</h4>
+        <p>Fortunately, there’s a shorthand for all of these animation properties, especially since we’re still
+            including the -webkit- prefix. The animation property takes as its value a space-separated list of values
+            for the longhand animation-name, animation-duration, animation-timing-function, animation-delay,
+            animation-iteration-count, animation-direction, animation-fill-mode, and animation-play-state properties.
+        </p>
+        <p>For Example: <br>
+            <br> .verbose {
+            <br> animation-name: appearDisappear;
+            <br> animation-duration: 300ms;
+            <br> animation-timing-function: ease-in;
+            <br> animation-iteration-count: 1;
+            <br> animation-direction: alternate;
+            <br> animation-delay: 5s;
+            <br> animation-fill-mode: backwards;
+            <br> animation-play-state: running;
+            <br> }
+            <br>
+            <br> /* shorthand */
+            <br> .concise {
+            <br> animation: 300ms ease-in alternate 5s backwards appearDisappear;
+            <br> }
+        </p>
+        <p>If using the shorthand property, be careful with your animation-name. You want to avoid accidentally using
+            any animation property key term such as forwards, running, or alternate. Those three key terms in particular
+            have caused many developers hours of debugging. </p>
+        <a href="/week8/bike.html">Animated Bicycle Example</a>
+        <h3><i>Use animations and transitions where it makes sense, enhancing the user experience—and skip it everywhere
+                else.</i></h3>
+
+        <h3> HTML5 & CSS3 for the Real World Chapter 12 - Canvas, SVG and Drag & Drop</h3>
+        <p>Canvas, SVG and Drag & Drop are all three APIs</p>
+        <h4>Canvas</h4>
+        <p>We can draw anything we can imagine, all through JavaScript. This can improve the performance of our websites
+            by avoiding the need to download images off the network. Canvas gives us the power to manipulate pixels in
+            images and even video. In the book it is used to change a modern color video into a conventional black and
+            white to match the overall look and feel of the page.</p>
+        <p>Below is a canvas example using the canvas element, style and script. </p>
+        <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+            Sorry! Your browser doesn’t support Canvas.
+        </canvas>
+
+        <!-- <canvas id="demo2" class="myCanvas" width="200" height="200">
+            Sorry! Your browser doesn’t support Canvas.
+        </canvas>
+
+        <canvas id="demo3" class="myCanvas" width="200" height="200">
+            Sorry! Your browser doesn’t support Canvas.
+        </canvas>
+
+        <h2>Demo 5: Saving canvas drawings</h2>
+<canvas width="200" height="200" id="demo5" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+</canvas>
+
+<button name="saveButton" id="saveButton">Save Drawing</button>
+
+<h2>Demo 6: Drawing an image to the canvas</h2>
+<canvas width="200" height="200" id="demo6" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+</canvas> -->
+
+        <img data-src="https://learnable-static.s3.amazonaws.com/premium/reeedr/books/html5-css3-for-the-real-world-2nd-edition/images/html5-logo.png"
+            id="myImageElem">
+        <h4>SVG</h4>
+        <p> SVG stands for Scalable Vector Graphics, a specific file format that allows you to describe vector graphics
+            using XML. A major selling point of vector graphics in general is that, unlike bitmap images (such as GIF,
+            JPEG, PNG, and TIFF), vector images preserve their quality even as you blow them up or shrink them down.</p>
+        <p>Below is a canvas example using the svg element.</p>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="25" fill="red" />
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
+            <desc>Drawing a rectangle</desc>
+            <rect x="10" y="10" width="50" height="50" fill="blue" stroke="red" stroke-width="3" />
+
+        </svg>
+        <p>Rather than completing complex SVG images by hand we can use tools that make SVG images for us such as <a
+                href="http://inkscape.org/">http://inkscape.org/</a></p>
+        <h4><i>Important Note: if you need to paint pixels to the screen and have no concerns about the ability to
+                retrieve and modify your shapes, canvas is probably the better choice. If, on the other hand, you need
+                to be able to access and change specific aspects of your graphics, SVG might be more appropriate.</i>
+            (Canvas = immediate mode & SVG = retained mode)</h4>
+
+        <h4>Drag & Drop</h4>
+        <p>This API allows us to specify that certain elements are draggable, and then specify what should happen when
+            these draggable elements are dragged over or dropped onto other elements on the page.</p>
+        <ul>There are several steps to adding drag and drop to your page:
+            <ol>1. Set the draggable attribute on any HTML elements you’d like to be draggable.</ol>
+            <ol>2. Add an event listener for the dragstart event on any draggable HTML elements.</ol>
+            <ol>3. Add an event listener for the dragover and drop events on any elements that you want to have accept dropped items.</ol>
+        </ul>
+            
+
+    </main>
+
+    <footer>
+        <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
+    </footer>
+</body>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+    context.strokeStyle = "red";
+    context.fillStyle = "rgba(0, 0, 255, 0.5)";
+    context.fillRect(10, 10, 100, 100);
+    context.strokeRect(10, 10, 100, 100);
+
+//     function drawPattern() {
+//     var canvas = document.getElementById("demo2");
+//     var context = canvas.getContext("2d");
+//     context.strokeStyle = "red";
+//     var img = new Image();
+//     img.src = "./bg-bike.png";
+//     img.onload = function() { 
+//     var pattern = context.createPattern(img, "repeat"); 
+//     context.fillStyle = pattern;                        
+//     context.fillRect(10, 10, 100, 100);                  
+//     context.strokeRect(10, 10, 100, 100);             
+//     };
+// }
+
+// function drawGradient() {
+//     var canvas = document.getElementById("demo3");
+//     var context = canvas.getContext("2d");
+//     context.strokeStyle = "red";
+//     var gradient = context.createLinearGradient(0, 0, 0, 200); 
+//     gradient.addColorStop(0, "blue"); 
+//     gradient.addColorStop(1, "white"); 
+//     context.fillStyle = gradient; 
+//     context.fillRect(10, 10, 100, 100); 
+//     context.strokeRect(10, 10, 100, 100); 
+// }
+
+// function drawCircle(canvas) {
+//     var context = canvas.getContext("2d");
+//     context.beginPath();
+//     context.arc(100, 100, 50, 0, Math.PI*2, true);
+//     context.closePath();
+//     context.strokeStyle = "red";
+//     context.fillStyle = "blue";
+//     context.lineWidth = 3;
+//     context.fill(); 
+//     context.stroke(); 
+// }
+
+// function saveDrawing() {
+//     var canvas5 = document.getElementById("demo5");
+//     window.open(canvas5.toDataURL("image/png"));
+// }
+
+// var button = document.getElementById("saveButton");
+// button.addEventListener("click", saveDrawing, false);
+
+
+</script>
+
+</html>
