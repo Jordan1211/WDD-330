@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SW API Tester</h1> 
+    <div class="cards"></div>
+    <div class="button"></div>
+    <button href="https://swapi.dev/api/people/?page=2">Next</button>
+</body>
+
+<script>
+const url = 'https://swapi.dev/api/people'
+let people = document.getElementById('people');
+
+
+let fetchPeople = fetch(url)
+  .then(function (response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    } else {
+      return response.json();
+  }})
+
+  
+  .then(function (jsonObject) {
+    console.log(jsonObject);  // temporary checking for valid response and data parsing
+    const results = jsonObject['results'];
+    results.forEach((result) => {
+        let card = document.createElement('section');
+        let h2 = document.createElement('h2');
+        let p = document.createElement('p');
+        let p2 = document.createElement('p');
+        
+        h2.textContent = `${result.name}`;
+        p.textContent = `Date of Birth: ${result.birth_year} `;
+        p2.textContent = `Eye Color: ${result.eye_color} `;
+
+      
+        card.appendChild(h2);
+        card.appendChild(p);
+        card.appendChild(p2);
+        
+        document.querySelector('div.cards').appendChild(card);
+  });
+        document.getElementById
+        let next = document.createElement('button');
+
+        next.textContent = `Next`;
+        next.setAttribute('href', result.next);
+        
+        document.querySelector('div.button').appendChild(button);
+
+});
+</script>
+</html>
