@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio Week 9 Notes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h4><a href="../index.html">Back to Home</a></h4>
+    </header>
+
+    <main>
+        <h2>Week 9 Notes</h2>
+        <h3>Novice to Ninja Chapter 9 - The Window Object</h3>
+        <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain
+            information about the browser and computer screen. It can also be used for popups (althought these should be
+            avoided).</p>
+        <p>Remember that JavaScript can be run in different environments. The BOM only makes sense in a browser
+            environment. This means that other environments (such as Node.js) probably won’t have a window object,
+            although they will still have a global object; for example, Node.js has an object called global. If you
+            don't konw the name of the global object you can use something like <i>const global = this;</i></p>
+        <p>Some functions we’ve already met, such as parseInt() and isNaN(), are actually methods of the global object,
+            which in a browser environment makes them methods of the window object.</p>
+        <p>3 functions that produce dialogs in the browsers are: alert(), confirm() and prompt(). These are not part of
+            the ECMAScript standard, although all major browsers support them as methods of the window object.</p>
+        <ul>
+            <li>The window.alert() method will pause the execution of the program and display a message in a dialog box.
+                The message is provided as an argument to the method, and undefined is always returned.</li>
+            <li>The window.confirm() method will stop the execution of the program and display a confirmation dialog
+                that shows the message provided as an argument, and giving the options of OK or Cancel. It returns the
+                boolean values of true if the user clicks OK, and false if the user clicks Cancel.</li>
+            <li>The window.prompt() method will stop the execution of the program. It displays a dialog that shows a
+                message provided as an argument, as well as an input field that allows the user to enter text. This text
+                is then returned as a string when the user clicks OK. If the user clicks Cancel, null is returned.</li>
+            <li><strong>WARNING: these methods will stop the execution of a program in its tracks. This means that
+                    everything will stop processing at the point the method is called, until the user clicks OK or
+                    Cancel. This can cause problems if the program needs to process something else at the same time or
+                    the program is waiting for a callback function.</strong></li>
+        </ul>
+        <p>The window object has a number of properties and methods that provide information about the user’s browser.
+        </p>
+        <ul>
+            <li>window.navigator - The Navigator object contains information about the browser being used. Its userAgent
+                property will return information about the browser and operating system being used. (remember that this
+                can be altered by the browser so it can be inaccurate)</li>
+            <li>window.location - The window.location property is an object that contains information about the URL of
+                the current page. It contains a number of properties that provide information about different fragments
+                of the URL.</li>
+            <ul>
+                <h4><strong>window.location properties</strong></h4>
+                <li>The href property returns the full URL as a string</li>
+                <li>The protocol property returns a string describing the protocol used (such as http, https, pop2, ftp
+                    etc.). Note that there is a colon (:) at the end</li>
+                <li>The host property returns a string describing the domain of the current URL and the port number
+                    (this is often omitted if the default port 80 is used)</li>
+                <li>The hostname property returns a string describing the domain of the current URL</li>
+                <li>The port property returns a string describing the port number, although it will return an empty
+                    string if the port is not explicitly stated in the URL</li>
+                <li>The pathname property returns a string of the path that follows the domain</li>
+                <li>The search property returns a string that starts with a “?” followed by the query string parameters.
+                    It returns an empty string if there are no query string parameters</li>
+                <li>The hash property returns a string that starts with a “#” followed by the fragment identifier. It
+                    returns an empty string if there is no fragment identifier</li>
+                <li>The origin property returns a string that shows the protocol and domain where the current page
+                    originated from. This property is read-only, so cannot be changed</li>
+            </ul>
+            <ul>
+                <h4><strong>window.location methods</strong> </h4>
+            </ul>
+            <li>The reload() method can be used to force a reload of the current page. If it’s given a parameter of
+                true, it will force the browser to reload the page from the server, instead of using a cached page</li>
+            <li>The assign() method can be used to load another resource from a URL provided as a parameter</li>
+            <li>The replace() method is almost the same as the assign() method, except the current page will not be
+                stored in the session history, so the user will be unable to navigate back to it using the back button
+            </li>
+            <li>The toString() method returns a string containing the whole URL</li>
+        </ul>
+        <li>The window.history property can be used to access information about any previously visited pages in the
+            current browser session.</li>
+        <ul>
+            <h4><strong>window.history properties</strong></h4>
+            <li>The window.history.length property shows how many pages have been visited before arriving at the current
+                page</li>
+            <li>The window.history.go() method can be used to go to a specific page, where 0 is the current page</li>
+        </ul>
+        <p>Each window object contains a document object. This object has properties and methods that deal with the page
+            that has been loaded into the window. In Chapter 6, we covered the Document Object Model and the properties
+            and methods used to manipulate items on the page.</p>
+        <p>Cookies are small files that are saved locally on a user’s computer. They were invented by Netscape as a way
+            of getting round HTTP being a stateless protocol. This means that a browser does not remember anything from
+            one request to another. So every time a user visits a page, nothing about any previous visits is remembered.
+            Cookies can be used to sidestep this problem by storing information that can then be retrieved between
+            requests.</p>
+        <p>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly
+            executing functions at regular intervals.The window.setTimeout() method accepts a callback to a function as 
+            its first parameter and a number of milliseconds as its second parameter. It can also cancel the timeout 
+            using the window.clearTimeout() method. The window.setInterval() method works in a similar way to 
+            window.setTimeout(), except that it will repeatedly invoke the callback function after every given number of
+            milliseconds.</p>
+        <a href="/week9/Ch9quiz/index.html">Quiz Ninja Example Chapter 9</a>
+
+        <h3>Novice to Ninja Chapter 14 - HTML5 APIs</h3>
+        <p>I chose just to do the activity for this section. </p>
+        <a href="/week9/Ch14quiz/index.html">Quiz Ninja Example Chapter 14</a>
+
+    </main>
+
+    <footer>
+        <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
+    </footer>
+</body>
+
+</html>
