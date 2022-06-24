@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio Challenge 2 Final</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Stoke&display=swap" rel="stylesheet">
+    <script src="./index.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h4><a href="../../index.html">Back to Home</a></h4>
+    </header>
+
+    <main>
+        <h2>Challenge 2 Custody Calendar:</h2>
+<!-- **********************************
+code for starting the calendar manually
+https://www.youtube.com/watch?v=o1yMqPyYeAo
+********************************** -->
+        <!-- <div class="container">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">
+                        <h3>May</h3>
+                        <p>Friday May 29, 2020</p>
+                    </div>
+                    <i class="fas fa-angle-right next"></i>                    
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days">
+                    <div class="prev-date">26</div>
+                    <div class="prev-date">27</div>
+                    <div class="prev-date">28</div>
+                    <div class="prev-date">29</div>
+                    <div class="prev-date">30</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    <div>16</div>
+                    <div>17</div>
+                    <div>18</div>
+                    <div>19</div>
+                    <div>20</div>
+                    <div>21</div>
+                    <div>22</div>
+                    <div>23</div>
+                    <div>24</div>
+                    <div>25</div>
+                    <div>26</div>
+                    <div>27</div>
+                    <div>28</div>
+                    <div>29</div>
+                    <div>30</div>
+                    <div>31</div>
+                    <div class="next-date">1</div>
+                    <div class="next-date">2</div>
+                    <div class="next-date">3</div>
+                    <div class="next-date">4</div>
+                    <div class="next-date">5</div>
+                    <div class="next-date">6</div>
+                </div>
+            </div>
+        </div> -->
+        <div id="start-date">
+        <label id="start">Start Date:</label>
+        <input for="start" type="date">
+        </div>
+        <form id="calendar-option">
+            <fieldset id="parent1">
+
+                <legend>1st Parent Bi-weekly Time </legend>
+                <div id="week1">
+                <h3>Week 1 Custody Days</h3>
+                <label for="1sunday">Sunday</label>
+                <input type="checkbox" id="1sunday" name="sunday" value="sunday">
+
+                <label for="1monday">Monday</label>
+                <input type="checkbox" id="1monday" name="monday" value="monday">
+
+                <label for="1tuesday">Tuesday</label>
+                <input type="checkbox" id="1tuesday" name="tuesday" value="tuesday">
+
+                <label for="1wednesday">Wednesday</label>
+                <input type="checkbox" id="1wednesday" name="wednesday" value="wednesday">
+
+                <label for="1thursday">Thursday</label>
+                <input type="checkbox" id="1thursday" name="thursday" value="thursday">
+
+                <label for="1friday">Friday</label>
+                <input type="checkbox" id="1friday" name="friday" value="friday">
+
+                <label for="1saturday">Saturday</label>
+                <input type="checkbox" id="1saturday" name="saturday" value="saturday">
+                </div>
+                <div id="week2">
+                    <h3>Week 2 Custody Days</h3>
+                    <label for="2sunday">Sunday</label>
+                    <input type="checkbox" id="2sunday" name="sunday" value="sunday">
+    
+                    <label for="2monday">Monday</label>
+                    <input type="checkbox" id="2monday" name="monday" value="monday">
+    
+                    <label for="2tuesday">Tuesday</label>
+                    <input type="checkbox" id="2tuesday" name="tuesday" value="tuesday">
+    
+                    <label for="2wednesday">Wednesday</label>
+                    <input type="checkbox" id="2wednesday" name="wednesday" value="wednesday">
+    
+                    <label for="2thursday">Thursday</label>
+                    <input type="checkbox" id="2thursday" name="thursday" value="thursday">
+    
+                    <label for="2friday">Friday</label>
+                    <input type="checkbox" id="2friday" name="friday" value="friday">
+    
+                    <label for="2saturday">Saturday</label>
+                    <input type="checkbox" id="2saturday" name="saturday" value="saturday">
+                    </div>
+            <input type="submit" value="Submit">
+            </fieldset>
+
+            <fieldset id="parent2">
+                <legend>2nd Parent Bi-weekly Time </legend>
+                <div id="week1">
+                <h3>Week 1 Custody Days</h3>
+                <label for="1sunday">Sunday</label>
+                <input type="checkbox" id="1sunday" name="sunday" value="sunday">
+
+                <label for="1monday">Monday</label>
+                <input type="checkbox" id="1monday" name="monday" value="monday">
+
+                <label for="1tuesday">Tuesday</label>
+                <input type="checkbox" id="1tuesday" name="tuesday" value="tuesday">
+
+                <label for="1wednesday">Wednesday</label>
+                <input type="checkbox" id="1wednesday" name="wednesday" value="wednesday">
+
+                <label for="1thursday">Thursday</label>
+                <input type="checkbox" id="1thursday" name="thursday" value="thursday">
+
+                <label for="1friday">Friday</label>
+                <input type="checkbox" id="1friday" name="friday" value="friday">
+
+                <label for="1saturday">Saturday</label>
+                <input type="checkbox" id="1saturday" name="saturday" value="saturday">
+                </div>
+                <div id="week2">
+                    <h3>Week 2 Custody Days</h3>
+                    <label for="2sunday">Sunday</label>
+                    <input type="checkbox" id="2sunday" name="sunday" value="sunday">
+    
+                    <label for="2monday">Monday</label>
+                    <input type="checkbox" id="2monday" name="monday" value="monday">
+    
+                    <label for="2tuesday">Tuesday</label>
+                    <input type="checkbox" id="2tuesday" name="tuesday" value="tuesday">
+    
+                    <label for="2wednesday">Wednesday</label>
+                    <input type="checkbox" id="2wednesday" name="wednesday" value="wednesday">
+    
+                    <label for="2thursday">Thursday</label>
+                    <input type="checkbox" id="2thursday" name="thursday" value="thursday">
+    
+                    <label for="2friday">Friday</label>
+                    <input type="checkbox" id="2friday" name="friday" value="friday">
+    
+                    <label for="2saturday">Saturday</label>
+                    <input type="checkbox" id="2saturday" name="saturday" value="saturday">
+                    </div>
+            <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+        <h2>Purpose</h2>
+        <p>I intend to make an app to make co-parenting easier. In many situations, a calendar is needed so the parents and the children can feel stable and avoid conflicts. Schedules get hectic with holidays, state guidelines, one-off scenarios, and step-parents in the mix. For example, my schedule is I have my son every Sunday, Monday, Every other Tuesday, and Every other Friday & Saturday. Can you tell me if I have my son 5 Tuesdays from now? Not so simple. Many divorce situations can even have additional step-parent splits with time. As of right now these types of schedules can be hard to track and can cause additional contention if misunderstood. I am making an app so all considerations can be put into one easy-to-use application and it will spit out a calendar.</p>
+        <h2>Audience</h2>
+        <p>Mostly for divorce situations that have splits of time for their children. This could also be used for other things but my app is geared toward that population.</p>
+        <h2>Data Sources</h2>
+        <ul>
+            <li>External API or Custom Logic</li>
+                <ul>
+                    <li>I need a calendar so I will either rely on an API or make one myself</li>
+                </ul>
+            <li>localStorage / JSON file</li>
+                <ul>
+                    <li>I need to track user input preferences in order to configure the calendar in a helpful view</li>
+                </ul>
+        </ul>
+        <h2>Initial Module List:</h2>
+        <ul>
+            <li>Populate Calendar</li>
+            <li>Retrieve Parent 1 input</li>
+            <li>Retrieve Parent 2 input</li>
+            <li>Retrieve Holiday input</li>
+            <li>Retrieve Custom input</li>
+            <li>Change Calendar view</li>
+                <ul>
+                    <li>Weekly</li>
+                    <li>Monthly</li>
+                    <li>Annually</li>
+                </ul>
+        </ul>
+        <h2>Schedule</h2>
+        <ul>
+            <li>Week 1 - Configure calendar and styling &#10004</li>
+                <ul>
+                    <li>Date controller</li>
+                    <li>Date format controller</li>
+                    <li>Kendo UI - progress.com - calendar</li>
+                </ul>
+            <li>Week 2 - Obtain parent 1 input</li>
+            <li>Week 3 - Obtain parent 2 calendar</li>
+            <li>Week 4 - Configure views</li>
+        </ul>
+
+    </main>
+
+    <footer>
+        <p>Jordan Gresham | WDD-330 Web Frontend Development II | <a href="https://byui.edu/">BYU-I</a></p>
+    </footer>
+</body>
+</html>
