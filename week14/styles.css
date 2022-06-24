@@ -1,0 +1,87 @@
+body {
+    font-size: 16pt;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Stoke', serif;
+}
+
+header {
+    background-color: #5f5aa2;
+    color: #E5E5E5;
+    padding: 1.5rem;
+}
+
+main {
+    background-color: #3f4045;
+    color: #eff1f3;
+    min-height: 60vh;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+footer {
+    background-color: #355691;
+    color: #E5E5E5;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ol li, ol li::marker {
+    margin-left: 3rem;
+    color: #242F40;
+    list-style: square;
+}
+
+a:visited {
+    color: #ef767a;
+}
+
+header a {
+    color: #242f40;
+    padding-left: 5rem;
+}
+
+.questions {
+    background-color: yellow;
+    margin:0;
+    color: red;
+}
+
+form {
+    background-color: #495e7d;
+    border: #355691 3px dotted;
+    padding: 5%;
+    color: #E5E5E5;
+}
+
+fieldset[id^=parent] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+fieldset legend {
+    font-family: 'Stoke', serif;
+    padding-top: 1.5rem;
+}
+
+[id^=parent] div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+[id^=parent] input[type="submit" i] {
+    width: 20%;
+}
+
+#parent1 {
+    background-color:#355691 ;
+}
+
+#parent2 {
+    background-color: #ef767a;
+    color: #242F40;
+}
