@@ -64,7 +64,8 @@ fieldset[id^=parent] {
 
 fieldset legend {
     font-family: 'Stoke', serif;
-    padding-top: 1.5rem;
+    background-color: #E5E5E5;
+    color:#242F40;
 }
 
 [id^=parent] div {
@@ -74,7 +75,7 @@ fieldset legend {
 }
 
 [id^=parent] input[type="submit" i] {
-    width: 20%;
+    max-width: 100px;
 }
 
 #parent1 {
@@ -84,4 +85,10 @@ fieldset legend {
 #parent2 {
     background-color: #ef767a;
     color: #242F40;
+}
+
+#calendar-option {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Changelog for Kendo UI Professional v2022.2.621 (Tue Jun 21 2022)</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: .75em/1.5 Tahoma, sans-serif;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-size: normal;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: normal;
+            margin: 1.2em 0 .3em;
+            padding-bottom: .2em;
+        }
+
+        .breaking {
+            background-color: #e10c01;
+            color: #fff;
+            border-radius: 3px;
+            padding: 3px 4px;
+            display: inline-block;
+            font-size: 11px;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        #page {
+            width: 50em;
+            margin: 0 auto 2em;
+            border-radius: 0 0 1em 1em;
+            box-shadow: 0 0 10px #ccc;
+            padding: 1em 2em 2em;
+        }
+
+        .poBoxIcon {
+            float: left;
+            font-size: 2em;
+            margin: 1.2em .5em 0 0;
+        }
+
+        .poTopLine {
+            border-top: 2px solid #e1e1e1;
+            margin: 17px 0 40px 0;
+        }
+    </style>
+    <base href="https://www.telerik.com/support/whats-new/kendo-ui-web/release-history">
+</head>
+
+<body>
+    <div id="page">
+        <h1 class="title">Release notes</h1>
+        <div class="tClear poTopLine"></div>
+        <h1>Common</h1>
+        <div class="tClear poTopLine">
+            <div class="poBoxIconText">
+                <p><strong>What's fixed</strong></p>
+                <ul>
+                    <li>KendoLicensing.setScriptKey not working in typescript files <a href="https://github.com/telerik/kendo-ui-core/issues/6850">(#6850)</a></li>
+                </ul>
+            </div>
+        </div>
+        <h1>New components</h1>
+        <div class="tClear poTopLine">
+            <div class="poBoxIconText">
+                <h2>DropDownButton Component</h2>
+            </div>
+        </div>
+        <div class="tClear poTopLine">
+            <div class="poBoxIconText">
+                <h2>SplitButton Component</h2>
+            </div>
+        </div>
+        <h1>Features and Updates</h1>
+        <div class="tClear poTopLine">
+            <h2>AutoComplete</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Button</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Button's text cannot be inserted through $scope in AngularJS <a href="https://github.com/telerik/kendo-ui-core/issues/6727">(#6727)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Calendar</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Implement Calendar ARIA as per the spec</li>
+            </ul>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Navigate event of the Calendar is not triggered when it is bound inside another event handler</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>CheckBoxGroup</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Setting an empty array in CheckBoxGroup does not reset its value <a href="https://github.com/telerik/kendo-ui-core/issues/6818">(#6818)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>DatePicker</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>DateRangePicker</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Implement DateRangePicker ARIA as per the spec</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>DateTimePicker</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Add aria-haspopup=grid to the DateTimePicker combobox element</li>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>DropDownList</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>DropDownTree</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+            </ul>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>DropDownTree can not bind data when using remote datasource as grid editor <a href="https://github.com/telerik/kendo-ui-core/issues/5834">(#5834)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Editor</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Pasted table gets incorrect layout after formatting <a href="https://github.com/telerik/kendo-ui-core/issues/5818">(#5818)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Filter</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Implement Filter ARIA as per the spec </li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Grid</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Operation "Destroy" is triggered twice when the data is grouped. <a href="https://github.com/telerik/kendo-ui-core/issues/6858">(#6858)</a></li>
+                <li>MultiSelect in Grid column filter closes first time when clicked <a href="https://github.com/telerik/kendo-ui-core/issues/6857">(#6857)</a></li>
+                <li>Newly created empty row does not appear in Grid if filter is applied <a href="https://github.com/telerik/kendo-ui-core/issues/6795">(#6795)</a></li>
+                <li>Grid with group paging and server operations enabled throws a JavaScript error <a href="https://github.com/telerik/kendo-ui-core/issues/6786">(#6786)</a></li>
+                <li>Disabled Pager buttons in Grid do not have aria-disabled attribute set <a href="https://github.com/telerik/kendo-ui-core/issues/6775">(#6775)</a></li>
+                <li>The "rowReorder" event does not return a correct "oldIndex" and "newIndnex" in hierarchy when child grids are expanded <a href="https://github.com/telerik/kendo-ui-core/issues/6767">(#6767)</a></li>
+                <li>AutoComplete in FilterCell shouldn't clone Grid's datasource with the filters <a href="https://github.com/telerik/kendo-ui-core/issues/6538">(#6538)</a></li>
+                <li>Initially filtered Grid with checkbox list filter menu throws an error <a href="https://github.com/telerik/kendo-ui-core/issues/6532">(#6532)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ListBox</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>ListBox items are not displayed correctly when moving from right to left. <a href="https://github.com/telerik/kendo-ui-core/issues/6819">(#6819)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ListView</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>ListView loading spinner does not appear on initial data loading <a href="https://github.com/telerik/kendo-ui-core/issues/6743">(#6743)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Map</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Map markers are not positioned correctly on a zoomed out Bing map <a href="https://github.com/telerik/kendo-ui-core/issues/4711">(#4711)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>MaskedTextBox</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Add aria-placeholder to MaskedTextBox</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Menu</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Unable to close scrollable Menu subitems popup with Esc key</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>MultiColumnComboBox</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+            </ul>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>MultiColumnComboBox value is not set on mobile <a href="https://github.com/telerik/kendo-ui-core/issues/6792">(#6792)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>MultiSelect</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+                <li>Move ARIA attributes from wrapper to input element</li>
+            </ul>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>MultiSelect in Grid column filter closes first time when clicked <a href="https://github.com/telerik/kendo-ui-core/issues/6857">(#6857)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Pager</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Implement Pager ARIA as per the spec</li>
+            </ul>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Disabled Pager buttons in Grid do not have aria-disabled attribute set <a href="https://github.com/telerik/kendo-ui-core/issues/6775">(#6775)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>PanelBar</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Keyboard arrow navigation skip disabled items</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Scheduler</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Fix aria-selected to be removed properly from no longer selected rows in Scheduler Agenda view</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Spreadsheet</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Spreadsheet with dataSource and validation incorrect behavior <a href="https://github.com/telerik/kendo-ui-core/issues/6839">(#6839)</a></li>
+                <li>Spreadsheet sheet.fromJSON imports data to an improper place when the imported number of rows exceeds the current number of rows on the sheet <a href="https://github.com/telerik/kendo-ui-core/issues/6822">(#6822)</a></li>
+                <li>Formulas do not ignore strings <a href="https://github.com/telerik/kendo-ui-core/issues/6808">(#6808)</a></li>
+                <li>The defaultCellStyle is not applied on newly inserted rows and columns in Spreadsheet <a href="https://github.com/telerik/kendo-ui-core/issues/6799">(#6799)</a></li>
+                <li>SheetsBar scroll will prevent formula definition <a href="https://github.com/telerik/kendo-ui-core/issues/6747">(#6747)</a></li>
+                <li>Leading zeros are removed from cell value when being copied with the drag handler in the Spreadsheet. <a href="https://github.com/telerik/kendo-ui-core/issues/6592">(#6592)</a></li>
+                <li>Null Date on a spreadsheet is stored as incorrect value <a href="https://github.com/telerik/kendo-ui-core/issues/6516">(#6516)</a></li>
+                <li>Spreadsheet Undo clears all filters when triggered after a column is filtered twice <a href="https://github.com/telerik/kendo-ui-core/issues/6467">(#6467)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>TabStrip</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Tabs Overflowed When Scrollable is set to False <a href="https://github.com/telerik/kendo-ui-core/issues/6833">(#6833)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>TimePicker</h2>
+            <p><strong>What's new</strong></p>
+            <ul>
+                <li>Add aria-haspopup=listbox to the TimePicker combobox element</li>
+                <li>Substitute aria-owns with aria-controls in role="combobox" widgets</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ToolBar</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>The overflow menu of the Toolbar hides on specific window size <a href="https://github.com/telerik/kendo-ui-core/issues/6860">(#6860)</a></li>
+                <li>Maximum call stack error is thrown when ToolBar is initialized in kendo.mobile.Application <a href="https://github.com/telerik/kendo-ui-core/issues/6846">(#6846)</a></li>
+            </ul>
+            <p><strong>What's changed</strong></p>
+            <ul>
+                <li><span class="breaking">Breaking</span> Replace ToolBar's SplitButton with SplitButton component</li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Tooltip</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Tooltip not rendering loading icon with AJAX content <a href="https://github.com/telerik/kendo-ui-core/issues/6777">(#6777)</a></li>
+            </ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Window</h2>
+            <p><strong>What's fixed</strong></p>
+            <ul>
+                <li>Unable to scroll Window content through arrow keys in Chrome and IE11</li>
+                <li>When a Window is not focused, clicking on a DropDownList in the Window results in the DropDownList not gaining focus. <a href="https://github.com/telerik/kendo-ui-core/issues/6286">(#6286)</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -21,79 +21,34 @@
 
     <main>
         <h2>Challenge 2 Custody Calendar:</h2>
-<!-- **********************************
-code for starting the calendar manually
-https://www.youtube.com/watch?v=o1yMqPyYeAo
-********************************** -->
-        <!-- <div class="container">
-            <div class="calendar">
-                <div class="month">
-                    <i class="fas fa-angle-left prev"></i>
-                    <div class="date">
-                        <h3>May</h3>
-                        <p>Friday May 29, 2020</p>
+
+                <!-- <link href="examples/content/shared/styles/examples-offline.css" rel="stylesheet"> -->
+                <link href="./styles/kendo.common.min.css" rel="stylesheet">
+                <link href="./styles/kendo.rtl.min.css" rel="stylesheet">
+                <link href="./styles/kendo.default.min.css" rel="stylesheet">
+                <link href="./styles/kendo.default.mobile.min.css" rel="stylesheet">
+                <script src="./js/jquery.min.js"></script>
+                <script src="./js/jszip.min.js"></script>
+                <script src="./js/kendo.all.min.js"></script>
+                <script src="examples/content/shared/js/console.js"></script>
+
+                    <div id="example">
+                            <div class="demo-section" style="text-align: center;">
+                        <h4>Pick a date</h4>
+                        <div id="calendar"></div>
                     </div>
-                    <i class="fas fa-angle-right next"></i>                    
-                </div>
-                <div class="weekdays">
-                    <div>Sun</div>
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thu</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
-                </div>
-                <div class="days">
-                    <div class="prev-date">26</div>
-                    <div class="prev-date">27</div>
-                    <div class="prev-date">28</div>
-                    <div class="prev-date">29</div>
-                    <div class="prev-date">30</div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
-                    <div>6</div>
-                    <div>7</div>
-                    <div>8</div>
-                    <div>9</div>
-                    <div>10</div>
-                    <div>11</div>
-                    <div>12</div>
-                    <div>13</div>
-                    <div>14</div>
-                    <div>15</div>
-                    <div>16</div>
-                    <div>17</div>
-                    <div>18</div>
-                    <div>19</div>
-                    <div>20</div>
-                    <div>21</div>
-                    <div>22</div>
-                    <div>23</div>
-                    <div>24</div>
-                    <div>25</div>
-                    <div>26</div>
-                    <div>27</div>
-                    <div>28</div>
-                    <div>29</div>
-                    <div>30</div>
-                    <div>31</div>
-                    <div class="next-date">1</div>
-                    <div class="next-date">2</div>
-                    <div class="next-date">3</div>
-                    <div class="next-date">4</div>
-                    <div class="next-date">5</div>
-                    <div class="next-date">6</div>
-                </div>
-            </div>
-        </div> -->
-        <div id="start-date">
+                        <script>
+                            $(document).ready(function() {
+                                // create Calendar from div HTML element
+                                $("#calendar").kendoCalendar();
+                            });
+                        </script>
+                    </div>
+
+        <!-- <div id="start-date">
         <label id="start">Start Date:</label>
         <input for="start" type="date">
-        </div>
+        </div> -->
         <form id="calendar-option">
             <fieldset id="parent1">
 
@@ -231,9 +186,7 @@ https://www.youtube.com/watch?v=o1yMqPyYeAo
         <ul>
             <li>Week 1 - Configure calendar and styling &#10004</li>
                 <ul>
-                    <li>Date controller</li>
-                    <li>Date format controller</li>
-                    <li>Kendo UI - progress.com - calendar</li>
+                    <li>Kendo UI - progress.com - calendar &#10004</li>
                 </ul>
             <li>Week 2 - Obtain parent 1 input</li>
             <li>Week 3 - Obtain parent 2 calendar</li>
