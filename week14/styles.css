@@ -92,3 +92,10 @@ fieldset legend {
     flex-direction: row;
     text-align: center;
 }
+
+#start-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px white solid;
+}
