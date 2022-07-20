@@ -52,65 +52,54 @@
     console.log('Start Day of Week: ' + sunday);
     return sunday;
   }
-  //shows the parent 1input and parent 2 inputs
-  console.log(parent1Input);
+
+  //shows the parent 1 inputs and parent 2 inputs
+  // console.log(parent1Input);
   // console.log(parent2Input);
 
-  //atempt to interact with calendar and output formatting
-  function populateCalendar() {$(document).ready(function () {
+  //interact with calendar and output formatting
+  function populateCalendar() {  
     var start = getStartDate(),
-      // events = [
-      //   +new Date(start.getFullYear(), start.getMonth(), 8),
-      //   +new Date(start.getFullYear(), start.getMonth(), 12),
-      //   +new Date(start.getFullYear(), start.getMonth(), 24),
-      //   +new Date(start.getFullYear(), start.getMonth() + 1, 6),
-      //   +new Date(start.getFullYear(), start.getMonth() + 1, 7),
-      //   +new Date(start.getFullYear(), start.getMonth() + 1, 25),
-      //   +new Date(start.getFullYear(), start.getMonth() + 1, 27),
-      //   +new Date(start.getFullYear(), start.getMonth() - 1, 3),
-      //   +new Date(start.getFullYear(), start.getMonth() - 1, 5),
-      //   +new Date(start.getFullYear(), start.getMonth() - 2, 22),
-      //   +new Date(start.getFullYear(), start.getMonth() - 2, 27)
-      // ];
-      
-      
       events = [];
+
+
       parent1Input.forEach(function (inputInfo, i) {
         const checked = inputInfo.checked;
-        const day = inputInfo.id;
         const order = 0 + i;
-        // console.log(start);
-        // console.log(order);
-        const date = start + order;
-        console.log(date);
-        const parent1Output = +new Date(start.getFullYear(), start.getMonth(), start.getDate()+ order)+' = "'+checked+'"';
+        const date = +new Date(start.getFullYear(), start.getMonth(), start.getDate()+ order);
+        const parent1Output = {key: date,
+          value: checked};
         events.push(parent1Output);
       });
 
-      console.log(events);
 
+      events.forEach(function (event) {
+        const key = event.key;
+        const value = event.value.toString();
+        events[key] = value;
+      });
+
+    //show the events that wil be passed to the kendo api
+     console.log(events);
+
+    // kendo api piece that uses start date and events to populate formatting
     $("#calendar").kendoCalendar({
-      value: start,
-      dates: events,
-      weekNumber: true,
-      month: {
-        // template for dates in month view
-        content: '# if ($.inArray(+data.date, data.dates) != -1) { #' +
-          '<div class="' +
-          '# if (data.value < 10) { #' +
-          "parent1days" +
-          '# } else if ( data.value < 20 ) { #' +
-          "parent2days" +
-          '# } else { #' +
-          "cocktail" +
-          '# } #' +
-          '">#= data.value #</div>' +
-          '# } else { #' +
-          '#= data.value #' +
-          '# } #',
-        weekNumber: '<a class="italic">#= data.weekNumber #</a>'
+      value:start,
+      dates:events,
+      month:{
+          content:'# if (typeof data.dates[+data.date] === "string") { #' +
+                  '<div class="#= data.dates[+data.date] #">' +
+                  '#= data.value #' +
+                  '</div>' +
+                  '# } else { #' +
+                  '#= data.value #' +
+                  '# } #'
       },
-      footer: false
-    });
-  });
+      footer: false,
+      //navigation function tells the calendar which classes to assign
+      navigate:function () {
+          $(".true", "#calendar").parent().addClass("parent1days-style k-state-hover");
+          $(".false", "#calendar").parent().addClass("parent2days-style k-state-hover");
+      }
+  }).data("kendoCalendar");
 };

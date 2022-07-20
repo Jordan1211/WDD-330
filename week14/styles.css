@@ -53,7 +53,7 @@ header a {
 form {
     background-color: #495e7d;
     border: #355691 3px dotted;
-    padding: 5%;
+    padding: 3%;
     color: #E5E5E5;
 }
 
@@ -108,83 +108,24 @@ fieldset legend {
     transform: scale(2);
 }
 
-
-
-.parent1days {
-    background-color: #97a9c7;
+legend p {
+    font-size: 8pt;
+    padding: 0;
+    margin: 0;
 }
 
-.parent2days {
-    background-color: #f7babc;
+span {
+    text-align: center;
 }
 
-/* #calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(1) > a {
-    background-color: #97a9c7;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(2) > a {
-    background-color: #97a9c7;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(3) > a {
-    background-color: #f7babc;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(4) > a {
-    background-color: #f7babc;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(5) > a {
-    background-color: #f7babc;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(6) > a {
-    background-color: #97a9c7;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(7) > a {
-    background-color: #97a9c7;
+
+.parent1days-style {
+    background-color: #97a9c7 !important;
 }
 
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(1) > a {
-    background-color: #97a9c7;
+.parent2days-style {
+    background-color: #f7babc !important;
 }
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(2) > a {
-    background-color: #97a9c7;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(3) > a {
-    background-color: #97a9c7;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(4) > a {
-    background-color: #f7babc;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(5) > a {
-    background-color: #f7babc;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(6) > a {
-    background-color: #f7babc;
-}
-#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(7) > a {
-    background-color: #f7babc;
-} */
-
-    /* Template Days */
-
-    .exhibition,
-    .party,
-    .cocktail {
-        font-weight: bold;
-    }
-
-    .exhibition {
-        color: #ff9e00;
-    }
-
-    .party {
-        color: #ff4081;
-    }
-
-    .cocktail {
-        color: #00a1e8;
-    }
-
-    .italic{
-        font-style: italic;
-    }
 
 
 @media screen and (min-width:1024px){
@@ -192,5 +133,6 @@ fieldset legend {
             display: flex;
             flex-direction: row;
             text-align: center;
+            justify-content: space-around;
         }
 }
