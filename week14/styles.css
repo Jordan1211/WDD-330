@@ -85,9 +85,14 @@ fieldset legend {
 
 #start-date {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     border: 1px white solid;
+    align-items: center;
+}
+
+#start-date input {
+    max-height: 25px;
+    margin: 20px;
 }
 
 #submitcalendars {
@@ -102,6 +107,85 @@ fieldset legend {
     box-shadow: 3px 6px 6px #ef767a;
     transform: scale(2);
 }
+
+
+
+.parent1days {
+    background-color: #97a9c7;
+}
+
+.parent2days {
+    background-color: #f7babc;
+}
+
+/* #calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(1) > a {
+    background-color: #97a9c7;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(2) > a {
+    background-color: #97a9c7;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(3) > a {
+    background-color: #f7babc;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(4) > a {
+    background-color: #f7babc;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(5) > a {
+    background-color: #f7babc;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(6) > a {
+    background-color: #97a9c7;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(4) > td:nth-child(7) > a {
+    background-color: #97a9c7;
+}
+
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(1) > a {
+    background-color: #97a9c7;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(2) > a {
+    background-color: #97a9c7;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(3) > a {
+    background-color: #97a9c7;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(4) > a {
+    background-color: #f7babc;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(5) > a {
+    background-color: #f7babc;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(6) > a {
+    background-color: #f7babc;
+}
+#calendar > div.k-calendar-view.k-calendar-monthview > table > tbody > tr:nth-child(5) > td:nth-child(7) > a {
+    background-color: #f7babc;
+} */
+
+    /* Template Days */
+
+    .exhibition,
+    .party,
+    .cocktail {
+        font-weight: bold;
+    }
+
+    .exhibition {
+        color: #ff9e00;
+    }
+
+    .party {
+        color: #ff4081;
+    }
+
+    .cocktail {
+        color: #00a1e8;
+    }
+
+    .italic{
+        font-style: italic;
+    }
+
 
 @media screen and (min-width:1024px){
         #calendar-option {
