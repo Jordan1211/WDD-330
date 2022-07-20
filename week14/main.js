@@ -9,7 +9,7 @@
 
   //event listener for date changes
   dateInput.addEventListener('change', getStartDate);
-    dateInput.addEventListener('change', getStartDate);
+  dateInput.addEventListener('change', populateCalendar);
 
   //event listener for parent time checkbox changes
   parent1.addEventListener('change', getChecks);
